@@ -1,6 +1,6 @@
 {
   "name": "@gfmachado/use-typewriter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple React hook for typewriter effect",
   "main": "dist/index.js",
   "module": "dist/index.js",
