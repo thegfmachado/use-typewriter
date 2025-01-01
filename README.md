@@ -1,4 +1,4 @@
-# use-typewritter
+# use-typewriter
 A react hook for typewriter effect.
 
 ## Installation
