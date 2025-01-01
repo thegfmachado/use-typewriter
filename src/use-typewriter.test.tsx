@@ -1,5 +1,5 @@
-import { act, renderHook } from "@testing-library/react";
-import { useTypewriter } from "./use-typewriter";
+import { act, renderHook } from '@testing-library/react';
+import { useTypewriter } from './use-typewriter';
 
 afterEach(() => {
   jest.clearAllTimers();
@@ -62,9 +62,7 @@ test('should call onWrite when new text is written', async () => {
   const text = 'Hello';
   const timeToComplete = speed * text.length + buffer;
 
-  const { result } = renderHook(() =>
-    useTypewriter({ targetRef, speed, onWrite: onWriteMock })
-  );
+  const { result } = renderHook(() => useTypewriter({ targetRef, speed, onWrite: onWriteMock }));
 
   act(() => {
     result.current.write(text).start();
@@ -90,9 +88,7 @@ test('should call onComplete when the writing is done', async () => {
   const text = 'Hello';
   const timeToComplete = speed * text.length + buffer;
 
-  const { result } = renderHook(() =>
-    useTypewriter({ targetRef, speed, onComplete: onCompleteMock })
-  );
+  const { result } = renderHook(() => useTypewriter({ targetRef, speed, onComplete: onCompleteMock }));
 
   act(() => {
     result.current.write(text).start();
@@ -140,9 +136,7 @@ test('should handle looping of text', async () => {
   const text = 'Hello';
   const timeToComplete = speed * text.length + buffer;
 
-  const { result } = renderHook(() =>
-    useTypewriter({ targetRef, speed, loop: true, onWrite: onWriteMock })
-  );
+  const { result } = renderHook(() => useTypewriter({ targetRef, speed, loop: true, onWrite: onWriteMock }));
 
   act(() => {
     result.current.write(text).start();

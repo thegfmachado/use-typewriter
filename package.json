@@ -1,6 +1,7 @@
 {
-  "name": "use-typewriter",
+  "name": "@gfmachado/use-typewriter",
   "version": "0.1.0",
+  "description": "A simple React hook for typewriter effect",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,8 +9,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "format": "prettier --write ."
   },
   "keywords": [
@@ -20,10 +21,15 @@
     "typescript",
     "npm",
     "animation",
+    "front-end",
     "react",
     "hook"
   ],
-  "author": "Gabriel Machado",
+  "author": {
+    "name": "Gabriel Machado",
+    "email": "gabriel.ferreira.machado@hotmail.com",
+    "url": "https://gfmachado.dev"
+  },
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.17.0",
