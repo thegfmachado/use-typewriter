@@ -22,7 +22,7 @@ npm install @gfmachado/use-typewriter
 
 ## 🔧 Usage
 
-In any React component, import `useTypewriter`, then call it like any other [hook][hooks]. The returned `typewriter` instance will update every second with the remaining time.
+In any React component, import `useTypewriter`, then call it like any other [hook][hooks]. The returned `TypewriterInstance` works like a chainable actions queue, it means you can combine actions like write, stop or delete. Just don't forget to call `start()` as the last chain method.
 
 ```typescript
 import React, { useRef } from 'react';
@@ -55,8 +55,6 @@ export default App;
 ## 📖 API Reference
 
 ### `useTypewriter({ targetRef, loop: true })`
-
-Starts a typewriter effect based on the provided options. The returned `TypewriterInstance` object works like a chainable actions queue, it means you can combine actions like write, stop or delete. Just don't forget to call `start()` as the last chain method.
 
 ### Options
 
