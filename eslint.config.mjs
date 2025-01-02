@@ -25,6 +25,7 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tseslint,
+      '@eslint/js': pluginJs,
       prettier: pluginPrettier,
       react: pluginReact,
     },
