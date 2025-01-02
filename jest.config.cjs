@@ -1,5 +1,6 @@
 module.exports = {
   preset: 'ts-jest',
+  transformIgnorePatterns: ['/dist/'],
   testEnvironment: 'jest-environment-jsdom', // Use the installed environment explicitly
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest', // Use ts-jest to handle .ts and .tsx files
