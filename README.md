@@ -26,7 +26,7 @@ In any React component, import `useTypewriter`, then call it like any other [hoo
 
 ```typescript
 import React, { useRef } from 'react';
-import useCountdown from '@gfmachado/use-typewriter';
+import { useTypewriter } from '@gfmachado/use-typewriter';
 
 const App = () => {
   const targetRef = useRef<HTMLDivElement>(null);
