@@ -28,13 +28,13 @@ jobs:
       - name: '💾 format'
         run: npm run format
 
-      # Run tests (ensure you have your test script in package.json)
+      # Build the project
+      - name: '⚙️ build'
+        run: npm run build
+
+      # Run tests
       - name: '🧪 test'
         run: npm run test
-
-      # Upload code coverage (optional but useful for tracking)
-      - name: '☂️ coverage'
-        uses: codecov/codecov-action@v3
 
       # Publish the package to NPM
       - name: '🚀 publish'

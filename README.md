@@ -1,5 +1,11 @@
 # useTypewriter hook ✍️⌨️
 
+[![version][version-badge]][npm]
+[![typescript][typescript-badge]][typescript-badge]
+[![size][size-badge]][bundlephobia]
+
+_A [React][react] hook to add a dynamic typewriting effect to your components!_
+
 <p align="center">
     <a href="https://www.npmjs.com/package/@gfmachado/use-typewriter">
         <img alt="next link" src="./images/github.png" width="500">
@@ -66,8 +72,6 @@ Starts a typewriter effect based on the provided options. The returned `Typewrit
 | `onDelete`    | `(text: string) => void`                    | -             | Callback function called when text is deleted.                                                   |
 | `onComplete`  | `() => void`                                | -             | Callback function called when the typewriter completes a loop.                                   |
 
-This should resolve the issue with the column formatting in your Markdown table.
-
 ### Instance Methods
 
 | Method           | Description                                         |
@@ -102,20 +106,10 @@ This should resolve the issue with the column formatting in your Markdown table.
 
 [issues]: https://github.com/thegfmachado/use-typewriter/issues
 [react]: https://reactjs.org
-[npm]: https://www.npmjs.com/package/@gfmachado/use-countdown
+[npm]: https://www.npmjs.com/package/@gfmachado/use-typewriter
 [hooks]: https://reactjs.org/docs/hooks-intro.html
 [bundlephobia]: https://bundlephobia.com/result?p=@gfmachado/use-typewriter
-[github-actions]: https://github.com/gfmachado/use-typewriter/actions
-[codecov]: https://app.codecov.io/gh/gfmachado/use-typewriter
-[typescript]: https://www.typescriptlang.org/dt/search?search=%40gfmachado%2Fuse-typewriter
-[contributing]: https://github.com/thegfmachado/use-typewriter/blob/master/contributing.md
-[contributors]: #-Contributors
 [version-badge]: https://img.shields.io/npm/v/@gfmachado/use-typewriter.svg?style=flat-square
-[downloads-badge]: https://img.shields.io/npm/dt/@gfmachado/use-typewriter?style=flat-square
 [size-badge]: https://img.shields.io/bundlephobia/minzip/@gfmachado/use-typewriter?style=flat-square
-[github-actions-badge]: https://img.shields.io/github/workflow/status/gfmachado/use-typewriter/%F0%9F%9A%80%20release?style=flat-square
-[codecov-badge]: https://img.shields.io/codecov/c/github/gfmachado/use-typewriter?style=flat-square
 [typescript-badge]: https://img.shields.io/npm/types/@gfmachado/use-typewriter?style=flat-square
-[contributing-badge]: https://img.shields.io/badge/PRs-welcome-success?style=flat-square
-[contributors-badge]: https://img.shields.io/github/all-contributors/gfmachado/use-typewriter?style=flat-square
 ```
