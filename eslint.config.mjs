@@ -1,42 +1,41 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import pluginReact from 'eslint-plugin-react';
-import pluginPrettier from 'eslint-plugin-prettier';
+import js from '@eslint/js';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginJest from 'eslint-plugin-jest';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ['src/*.{js,mjs,cjs,ts,jsx,tsx}'],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.jest,
-      },
+    ...js.configs.recommended,
+    files: ['*.js', '*.ts'],
+    rules: {
+      'no-console': 'warn',
+      'no-unused-vars': 'warn',
+      'react/prop-types': 'off',
     },
-    plugins: {
-      '@typescript-eslint': tseslint,
-      '@eslint/js': pluginJs,
-      prettier: pluginPrettier,
-      react: pluginReact,
+  },
+  eslintPluginPrettierRecommended,
+  {
+    plugins: eslintPluginReact,
+    files: ['*.jsx', '*.tsx'],
+    rules: {
+      'react/jsx-uses-react': 'error',
+      'no-console': 'warn',
+      'no-unused-vars': 'warn',
+      'react/prop-types': 'off',
+    },
+  },
+  {
+    files: ['**/*.spec.js', '**/*.test.js'],
+    plugins: { jest: eslintPluginJest },
+    languageOptions: {
+      globals: eslintPluginJest.environments.globals.globals,
     },
     rules: {
-      ...tseslint.configs.recommended.rules,
-      ...pluginJs.configs.recommended.rules,
-      ...pluginReact.configs.flat.recommended.rules,
-      'prettier/prettier': 'error', // Enable Prettier errors
-      'react/react-in-jsx-scope': 'off', // React 17+ JSX no longer needs React in scope
-      '@typescript-eslint/no-unused-vars': ['error'], // TypeScript-specific rule
-      'no-unused-vars': ['error', { args: 'none' }],
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error',
+      'jest/prefer-to-have-length': 'warn',
+      'jest/valid-expect': 'error',
     },
   },
 ];
