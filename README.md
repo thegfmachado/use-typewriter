@@ -1,15 +1,4 @@
-# ✍️⌨️📜 useTypewriter hook
-
-[![version][version-badge]][npm]
-[![downloads][downloads-badge]][npm]
-[![size][size-badge]][bundlephobia]
-[![github actions][github-actions-badge]][github-actions]
-[![codecov][codecov-badge]][codecov]
-[![typescript][typescript-badge]][typescript]
-[![contributing][contributing-badge]][contributing]
-[![contributors][contributors-badge]][contributors]
-
-_Simple [React][react] hook for typewriter effect._
+# useTypewriter hook ✍️⌨️
 
 <p align="center">
     <a href="https://www.npmjs.com/package/@gfmachado/use-typewriter">
@@ -61,35 +50,33 @@ export default App;
 
 ### `useTypewriter({ targetRef, loop: true })`
 
+Starts a typewriter effect based on the provided options. The returned `TypewriterInstance` object works like a chainable actions queue, it means you can combine actions like write, stop or delete. Just don't forget to call `start()` as the last chain method.
+
 ### Options
 
-| Option        | Type                         | Default Value | Description                                                    |
-| ------------- | ---------------------------- | ------------- | -------------------------------------------------------------- | -------------------------------------------------- |
-| `targetRef`   | `React.RefObject<HTMLElement | null>`        | -                                                              | The target element to apply the typewriter effect. |
-| `speed`       | `number`                     | `100`         | Typing and deleting speed in milliseconds per character.       |
-| `cursor`      | `boolean`                    | `true`        | Whether to display a blinking cursor.                          |
-| `cursorChar`  | `string`                     | `"            | "`                                                             | The character to use for the blinking cursor.      |
-| `cursorSpeed` | `number`                     | `450`         | The speed of the blinking cursor in milliseconds.              |
-| `loop`        | `boolean`                    | `false`       | Whether to loop the typewriter queue.                          |
-| `onWrite`     | `(text: string) => void`     | -             | Callback function called when new text is written.             |
-| `onDelete`    | `(text: string) => void`     | -             | Callback function called when text is deleted.                 |
-| `onComplete`  | `() => void`                 | -             | Callback function called when the typewriter completes a loop. |
+| Option        | Type                                         | Default Value | Description                                                                                      |
+| ------------- | -------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------ |
+| `targetRef`   | `React.RefObject<HTMLElement \| null>`       | -             | The target element (a reference) where the typewriter effect will be applied. It must be passed as a `ref` to the element you want to animate. |
+| `speed`       | `number`                                    | `100`         | Typing and deleting speed in milliseconds per character.                                         |
+| `cursor`      | `boolean`                                   | `true`        | Whether to display a blinking cursor.                                                            |
+| `cursorChar`  | `string`                                    | `"\|"`         | The character to use for the blinking cursor.                                                    |
+| `cursorSpeed` | `number`                                    | `450`         | The speed of the blinking cursor in milliseconds.                                                |
+| `loop`        | `boolean`                                   | `false`       | Whether to loop the typewriter queue.                                                            |
+| `onWrite`     | `(text: string) => void`                    | -             | Callback function called when new text is written.                                               |
+| `onDelete`    | `(text: string) => void`                    | -             | Callback function called when text is deleted.                                                   |
+| `onComplete`  | `() => void`                                | -             | Callback function called when the typewriter completes a loop.                                   |
 
-This table summarizes the configuration options and their default values, along with descriptions for each. | | | | | |
+This should resolve the issue with the column formatting in your Markdown table.
 
 ### Instance Methods
 
 | Method           | Description                                         |
 | ---------------- | --------------------------------------------------- |
-| `write(text)`    | Appends new text to the output.                     |
-| `delete(count)`  | Deletes a specified number of characters.           |
-| `stop(duration)` | Pauses the effect for a specified duration (in ms). |
+| `write(text: string)`    | Appends new text to the output.                     |
+| `delete(count: number)`  | Deletes a specified number of characters.           |
+| `stop(duration: number)` | Pauses the effect for a specified duration (in ms). |
 | `start()`        | Starts processing the typewriter queue.             |
 | `reset()`        | Clears all text and pending tasks from the queue.   |
-
-Starts a typewriter effect based on the provided options. The returned `TypewriterInstance` object works like a chainable actions queue, it means you can combine actions like write, stop or delete. Just don't forget to call `start()` as the last chain method.
-
-```
 
 ## ❔ Questions
 
