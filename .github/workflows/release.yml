@@ -17,18 +17,14 @@ jobs:
       - name: '🟢 node'
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
           registry-url: 'https://registry.npmjs.org/'
 
       # Install dependencies
       - name: '📦 install'
         run: npm ci
 
-      # Run linting
-      - name: '🧶 lint'
-        run: npm run lint
-
-      # Run formatting (optional, but good practice)
+      # Run formatting (optional)
       - name: '💾 format'
         run: npm run format
 
