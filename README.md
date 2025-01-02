@@ -8,7 +8,7 @@ _A [React][react] hook to add a dynamic typewriting effect to your components!_
 
 <p align="center">
     <a href="https://www.npmjs.com/package/@gfmachado/use-typewriter">
-        <img alt="next link" src="./images/cover.png" width="500">
+        <img alt="next link" src="./images/cover.gif" width="500">
     </a>
 </p>
 
