@@ -106,7 +106,7 @@ function useBlinkingCursor(text: string, cursorChar: string, interval: number): 
 /**
  * React hook to create a typewriter effect.
  */
-function useTypewriter(options: TypewriterOptions) {
+function useTypewriter(options: TypewriterOptions): TypewriterInstance {
   const {
     targetRef,
     cursor,
@@ -221,14 +221,14 @@ function useTypewriter(options: TypewriterOptions) {
 
   const typewriterInstance: TypewriterInstance = React.useMemo(
     () => ({
-      write(newText: string) {
+      write(text: string) {
         enqueue(async () => {
           setIsWriting(true);
 
-          for (let i = 0; i < newText.length; i++) {
+          for (let i = 0; i < text.length; i++) {
             await new Promise<void>((res) => setSafeTimeout(() => res(), speed));
             if (targetRef.current) {
-              targetRef.current.textContent += newText[i];
+              targetRef.current.textContent += text[i];
               updateOriginalText(targetRef.current.textContent);
               if (targetRef.current.textContent) {
                 onWrite?.(targetRef.current.textContent);
