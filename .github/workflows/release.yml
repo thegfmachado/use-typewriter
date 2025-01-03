@@ -8,7 +8,20 @@ jobs:
   release:
     name: '🚀 release'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ../../
     steps:
+      # Check version consistency
+      - name: '🔢 Check version consistency'
+        run: |
+          TAG_VERSION=${GITHUB_REF#refs/tags/}
+          FILE_VERSION=$(node -p "require('./package.json').version")
+          if [ "$TAG_VERSION" != "$FILE_VERSION" ]; then
+            echo "Version mismatch: tag ($TAG_VERSION) vs package.json ($FILE_VERSION)"
+            exit 1
+          fi
+
       # Checkout the code
       - name: '📚 checkout'
         uses: actions/checkout@v4
@@ -17,7 +30,7 @@ jobs:
       - name: '🟢 node'
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org/'
 
       # Install dependencies
@@ -27,6 +40,10 @@ jobs:
       # Run formatting (optional)
       - name: '💾 format'
         run: npm run format
+
+      # Run lint
+      - name: '🔍 lint'
+        run: npm run lint
 
       # Build the project
       - name: '⚙️ build'
